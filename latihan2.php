@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 5a</title>
-</head>
-<body>
-    <form method="get" action="">
-        Jumlah Baris: <input type="number" name="angka" required>
-        <input type="submit" value="Tampilkan">
-    </form>
+<?php
+// Array awal
+$negara_asean = ["Indonesia", "Singapura", "Malaysia", "Brunei", "Thailand"];
 
-    <?php
-    if (isset($_GET['angka'])) {
-        $jumlahBaris = $_GET['angka'];
+// Tampilkan daftar awal
+echo "<h3>Daftar Negara ASEAN awal :</h3>";
+echo "<ul>";
+foreach ($negara_asean as $negara) {
+    echo "<li>$negara</li>";
+}
+echo "</ul>";
 
-        for ($i = 1; $i <= $jumlahBaris; $i++) {
-            for ($j = 1; $j <= $i; $j++) {
-                echo $j . " ";
-            }
-            echo "<br>";
-        }
-    }
-    ?>
-</body>
-</html>
+// Tambahkan 3 elemen baru
+array_push($negara_asean, "Laos", "Filipina", "Myanmar");
+
+// Tampilkan daftar baru
+echo "<h3>Daftar Negara ASEAN baru :</h3>";
+echo "<ul>";
+foreach ($negara_asean as $negara) {
+    echo "<li>$negara</li>";
+}
+echo "</ul>";
+?>
